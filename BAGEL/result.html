@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAGEL Project Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        
+        .code-block {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', Courier, monospace;
+            overflow-x: auto;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #6366f1;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .section-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -32px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #6366f1;
+            border: 4px solid #e0e7ff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center">
+                        <i class="fas fa-brain text-2xl text-purple-600"></i>
+                    </div>
+                    <h1 class="text-2xl font-bold">BAGEL Project</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#overview" class="nav-link text-white font-medium">Overview</a>
+                    <a href="#architecture" class="nav-link text-white font-medium">Architecture</a>
+                    <a href="#components" class="nav-link text-white font-medium">Components</a>
+                    <a href="#flow" class="nav-link text-white font-medium">Flow Matching</a>
+                    <a href="#analysis" class="nav-link text-white font-medium">Analysis</a>
+                </nav>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <div class="mt-16 md:mt-24 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-6">BAGEL Project Analysis</h1>
+                <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
+                    A comprehensive analysis of the BAGEL multimodal foundation model with 7B active parameters
+                </p>
+                <div class="mt-10">
+                    <a href="#overview" class="inline-block bg-white text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300">
+                        Explore Analysis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Project Overview</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="section-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 text-white text-2xl">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multimodal Foundation</h3>
+                    <p class="text-gray-600">
+                        BAGEL is an open-source multimodal foundation model with 7B active parameters (14B total) trained on large-scale interleaved multimodal data.
+                    </p>
+                </div>
+                
+                <div class="section-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 text-white text-2xl">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Unified Capabilities</h3>
+                    <p class="text-gray-600">
+                        Implements unified multimodal understanding and generation capabilities including text-to-image generation, image understanding, and image editing.
+                    </p>
+                </div>
+                
+                <div class="section-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <div class="w-16 h-16 rounded-full gradient-bg flex items-center justify-center mb-6 text-white text-2xl">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Technical Stack</h3>
+                    <p class="text-gray-600">
+                        PyTorch 2.5.1 with Flash Attention 2.5.8, Accelerate, BitsAndBytes quantization (NF4, INT8), and Gradio web interface.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">System Architecture</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Core Directory Structure</h3>
+                    <div class="code-block mb-8">
+                        <pre>BAGEL/
+├── app.py                    # Gradio Web interface
+├── inferencer.py             # Core inference engine
+├── modeling/                 # Model implementations
+│   ├── bagel/                # BAGEL core model
+│   ├── qwen2/                # Qwen2 language model
+│   └── siglip/               # SigLIP vision model
+├── train/                    # Training code
+├── eval/                     # Evaluation scripts
+├── data/                     # Data processing tools
+├── scripts/                  # Run scripts
+└── test_images/              # Test images</pre>
+                    </div>
+                    
+                    <h3 class="text-2xl font-semibold mb-4 mt-8">Three Core Models</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-3"></i>
+                            <span><strong>Qwen2-MoT Language Model</strong>: Unified multimodal sequence modeling and text generation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-3"></i>
+                            <span><strong>SigLIP Visual Encoder</strong>: Image semantic understanding and feature extraction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-purple-600 mt-1 mr-3"></i>
+                            <span><strong>VAE Autoencoder</strong>: Pixel-level image encoding/decoding and generation</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold mb-6 text-center">Architecture Diagram</h3>
+                    <div class="relative">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-64 h-64 rounded-full opacity-10 gradient-bg"></div>
+                        </div>
+                        <div class="relative z-10">
+                            <div class="text-center mb-8">
+                                <div class="inline-block bg-purple-100 text-purple-800 px-4 py-2 rounded-full font-medium mb-2">
+                                    BAGEL Unified Multimodal System
+                                </div>
+                                <div class="text-sm text-gray-500">InterleaveInferencer (Inference Coordinator)</div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-8">
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-font text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">Text Understanding</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-image text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">Image Understanding</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-paint-brush text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">Image Generation</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-edit text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">Image Editing</div>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center mb-8">
+                                <div class="h-1 w-full bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
+                            </div>
+                            
+                            <div class="grid grid-cols-3 gap-4">
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-language text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">Qwen2 Language Model</div>
+                                    <div class="text-xs text-gray-500 mt-1">• MoT Architecture • Unified Modeling • Expert Routing</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-eye text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">SigLIP Vision Encoder</div>
+                                    <div class="text-xs text-gray-500 mt-1">• Semantic Features • Position Encoding • Multi-Resolution</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm text-center">
+                                    <div class="text-purple-600 mb-2">
+                                        <i class="fas fa-cube text-2xl"></i>
+                                    </div>
+                                    <div class="font-medium">VAE Autoencoder</div>
+                                    <div class="text-xs text-gray-500 mt-1">• Pixel Encoding • Latent Space • High Fidelity</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Components Section -->
+    <section id="components" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Core Components</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="section-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-8 h-8 rounded-full gradient-bg text-white flex items-center justify-center mr-3">1</span>
+                        Qwen2-MoT Language Model
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        The "brain" of the system, responsible for multimodal reasoning and decision making with Mixture-of-Transformer-Experts architecture.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>7B active parameters (14B total)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>Dynamic expert routing based on token type</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>Packed Attention for efficient sequence processing</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="section-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-8 h-8 rounded-full gradient-bg text-white flex items-center justify-center mr-3">2</span>
+                        SigLIP Visual Encoder
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Specialized for image semantic understanding with Native Vision Transformer (NaViT) architecture supporting arbitrary resolutions.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>2D Rotary Position Embedding (RoPE)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>Flash Attention optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>Semantic-level feature extraction</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="section-card bg-gray-50 p-8 rounded-xl shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 flex items-center">
+                        <span class="w-8 h-8 rounded-full gradient-bg text-white flex items-center justify-center mr-3">3</span>
+                        VAE Autoencoder
+                    </h3>
+                    <p class="text-gray-600 mb-4">
+                        Responsible for pixel-level image encoding/decoding and generation with continuous latent space for Flow Matching.
+                    </p>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>High-fidelity image reconstruction</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>Latent space operations for editing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-circle text-xs text-purple-600 mt-1.5 mr-2"></i>
+                            <span>Multi-scale processing architecture</span>
+                        </li>
+                    </ul>
+                                   </ul>
+                </div>
+            </div>
+
+            <!-- Component Details -->
+            <div class="bg-gray-50 rounded-xl p-8 shadow-md mb-12">
+                <h3 class="text-2xl font-semibold mb-6">Key Technical Features</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-medium mb-3 text-purple-700">MoT Architecture</h4>
+                        <p class="text-gray-600 mb-4">
+                            Mixture-of-Transformer-Experts architecture maximizes the model's ability to learn from diverse multimodal information with 7B active parameters.
+                        </p>
+                        <div class="code-block text-sm">
+                            <pre>class PackedAttentionMoT(Qwen2Attention):
+    def __init__(self, config):
+        super().__init__(config)
+        # Understanding experts
+        self.experts_und = nn.ModuleList([ExpertFFN(config) for _ in range(config.num_experts_und)])
+        # Generation experts
+        self.experts_gen = nn.ModuleList([ExpertFFN(config) for _ in range(config.num_experts_gen)])</pre>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-medium mb-3 text-purple-700">Dual Encoder Design</h4>
+                        <p class="text-gray-600 mb-4">
+                            VAE encoder captures pixel-level features for generation while ViT encoder captures semantic-level features for understanding.
+                        </p>
+                        <div class="code-block text-sm">
+                            <pre>def forward(self, x):
+    # VAE path for generation
+    z_vae = self.vae_encoder(x)
+    # ViT path for understanding
+    z_vit = self.vit_encoder(x)
+    return z_vae, z_vit</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flow Matching Section -->
+    <section id="flow" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Flow Matching Generation</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Flow Matching Process</h3>
+                    <p class="text-gray-600 mb-6">
+                        Flow Matching uses continuous flow techniques for image generation, replacing discrete diffusion processes with elegant ODE-based solutions.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 text-purple-800 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Text Encoding</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Text prompts are encoded by Qwen2-MoT to create conditioning context for generation.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 text-purple-800 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">Latent Space Initialization</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Random noise is initialized in VAE's latent space as starting point.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 text-purple-800 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">ODE Solving</h4>
+                                <p class="text-gray-600 text-sm">
+                                    LLM predicts velocity field for ODE solver to iteratively denoise the latent representation.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-purple-100 text-purple-800 w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-2">VAE Decoding</h4>
+                                <p class="text-gray-600 text-sm">
+                                    Final latent representation is decoded by VAE into high-resolution pixel image.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-semibold mb-6 text-center">Flow Matching Algorithm</h3>
+                    <div class="code-block">
+                        <pre>def flow_matching_generate(text_embeddings, num_steps=50):
+    # Initialize latent noise
+    z_t = torch.randn_like(prior)
+    
+    # ODE solving loop
+    for t in reversed(range(0, num_steps)):
+        # Predict velocity field
+        v = model.predict_velocity(z_t, t, text_embeddings)
+        
+        # Update latent representation
+        z_t = ode_solver.step(z_t, v, t)
+    
+    # Decode final latent
+    return vae.decode(z_t)</pre>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-medium mb-2">Key Parameters</h4>
+                        <ul class="space-y-2 text-sm">
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">cfg_text_scale</span>
+                                <span class="font-medium">4.0-8.0 (text guidance strength)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">cfg_image_scale</span>
+                                <span class="font-medium">1.0-2.0 (image fidelity control)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span class="text-gray-600">num_timesteps</span>
+                                <span class="font-medium">50 (typical denoising steps)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Analysis Section -->
+    <section id="analysis" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Analysis</h2>
+                <div class="w-20 h-1 bg-purple-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Implementation Timeline</h3>
+                    <div class="relative pl-8 border-l-2 border-purple-200 space-y-8">
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-12 top-0 text-sm text-gray-500">2024-12-19</div>
+                            <h4 class="font-semibold mb-2">Core Architecture Analysis</h4>
+                            <p class="text-gray-600 text-sm">
+                                Documented the three-model collaborative design and information flow paths between components.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-12 top-0 text-sm text-gray-500">2024-12-19</div>
+                            <h4 class="font-semibold mb-2">Component Mechanism Deep Dive</h4>
+                            <p class="text-gray-600 text-sm">
+                                Analyzed Qwen2-MoT, SigLIP, and VAE implementations including mathematical foundations.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-12 top-0 text-sm text-gray-500">2024-12-19</div>
+                            <h4 class="font-semibold mb-2">Multimodal Fusion Analysis</h4>
+                            <p class="text-gray-600 text-sm">
+                                Completed dual-path conversion mechanism and packed sequence processing.
+                            </p>
+                        </div>
+                        <div class="timeline-item relative">
+                            <div class="absolute -left-12 top-0 text-sm text-gray-500">2024-12-19</div>
+                            <h4 class="font-semibold mb-2">Flow Matching Documentation</h4>
+                            <p class="text-gray-600 text-sm">
+                                Detailed Flow Matching theory, training objectives and ODE solver implementation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Key Innovations</h3>
+                    <div class="space-y-6">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-2 text-purple-700">Unified Token Sequence Processing</h4>
+                            <p class="text-gray-600 text-sm">
+                                Text, visual understanding features, and visual generation features are unified into a single token sequence with shared position encoding.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-2 text-purple-700">Expert Mixture Architecture</h4>
+                            <p class="text-gray-600 text-sm">
+                                Dynamic routing based on token type to understanding or generation experts enables efficient parameter utilization.
+                            </p>
+                        </div>
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                            <h4 class="font-semibold mb-2 text-purple-700">Dual Encoder Collaboration</h4>
+                            <p class="text-gray-600 text-sm">
+                                SigLIP focuses on semantic understanding while VAE handles pixel generation, with features combined through MLP connectors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                            <i class="fas fa-brain text-xl text-purple-600"></i>
+                        </div>
+                        <h2 class="text-xl font-bold">BAGEL Project</h2>
+                    </div>
+                    <p class="mt-4 text-sm opacity-80 max-w-md">
+                        An open-source multimodal foundation model with unified understanding and generation capabilities.
+                    </p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-white bg-opacity-10 flex items-center justify-center hover:bg-opacity-20 transition">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="border-t border-white border-opacity-20 mt-8 pt-8 text-sm text-center opacity-70">
+                <p>© 2025 BAGEL Project. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

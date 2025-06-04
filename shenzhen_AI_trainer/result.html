@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>深圳人工智能训练师职业技能补贴指南</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-divider {
+            position: relative;
+            height: 80px;
+            overflow: hidden;
+        }
+        .section-divider::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 100%;
+            background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+        }
+        .tab-active {
+            border-bottom: 3px solid #3b82f6;
+            color: #3b82f6;
+            font-weight: 600;
+        }
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: -38px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+            border: 3px solid #bfdbfe;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white">
+        <div class="container mx-auto px-6 py-16">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">深圳人工智能训练师职业技能补贴指南</h1>
+                    <p class="text-xl mb-8">最高可获2400元补贴 | 国家认可证书 | 广阔就业前景</p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#apply" class="bg-white text-blue-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-semibold transition duration-300">立即申请</a>
+                        <a href="#contact" class="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-6 py-3 rounded-lg font-semibold transition duration-300">咨询详情</a>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AI Training" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 border-r border-gray-200">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">¥2400</div>
+                    <div class="text-gray-600">最高补贴金额</div>
+                </div>
+                <div class="p-6 border-r border-gray-200">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">100,000+</div>
+                    <div class="text-gray-600">深圳AI人才缺口</div>
+                </div>
+                <div class="p-6 border-r border-gray-200">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">90%</div>
+                    <div class="text-gray-600">培训通过率</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">¥30,000</div>
+                    <div class="text-gray-600">平均月薪范围</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Policy Overview -->
+    <section id="overview" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">政策概述</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden mb-8">
+                <div class="md:flex">
+                    <div class="md:w-1/2 p-8">
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4">深圳AI产业发展规划</h3>
+                        <p class="text-gray-600 mb-4">深圳市作为中国创新科技的前沿阵地，积极响应国家"人工智能+"战略，大力支持人工智能训练师这一新兴职业的发展。</p>
+                        <p class="text-gray-600 mb-4">根据《深圳市人工智能高质量发展行动方案（2023-2025）》，到2025年全市人工智能核心产业规模将突破2000亿元，而当前AI人才缺口已超10万人。</p>
+                        <p class="text-gray-600">为培养更多AI专业人才，深圳市出台了一系列职业技能补贴政策，支持劳动者参与人工智能训练师职业技能培训与认证。</p>
+                    </div>
+                    <div class="md:w-1/2 bg-blue-50 flex items-center justify-center p-8">
+                        <div class="max-w-md">
+                            <div class="flex items-center mb-6">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-file-alt text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">政策依据</h4>
+                                    <p class="text-gray-600 text-sm">《深圳市职业技能培训补贴办法》（深人社规〔2023〕8号）</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center mb-6">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-bullseye text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">政策目标</h4>
+                                    <p class="text-gray-600 text-sm">培养10万名AI专业人才，助力深圳成为全球AI创新中心</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                    <i class="fas fa-calendar-check text-blue-600 text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">有效期</h4>
+                                    <p class="text-gray-600 text-sm">2023-2025年（根据最新政策调整）</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subsidy Details -->
+    <section id="subsidy" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">补贴标准</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-blue-50 rounded-lg p-6 shadow-md card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">补贴金额</h3>
+                    <p class="text-gray-600">根据最新政策，深圳市对考取人工智能训练师职业技能等级证书的个人提供补贴：</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>五级/初级工：1000元/人</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>四级/中级工：1500元/人</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>三级/高级工：2000元/人（急需紧缺职业可上浮30%，最高2400元/人）</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 rounded-lg p-6 shadow-md card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">补贴对象</h3>
+                    <p class="text-gray-600">符合条件的深圳市户籍、在深参保人员、高校毕业生等群体：</p>
+                    <ul class="mt-4 space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>深圳市户籍人员</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>在深圳市正常缴交社会保险费人员</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>深圳市登记失业人员</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                            <span>在深圳市公共就业服务机构进行离校两年未就业实名登记的本市高校毕业生</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="bg-blue-50 rounded-lg p-6 shadow-md card-hover transition duration-300">
+                    <div class="text-blue-600 text-4xl mb-4">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">注意事项</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>同一人员同一年度（自然年度），职业技能提升补贴、企业新型学徒制培训补贴、项目制培训补贴、职业技能评价补贴均只可享受一次，累计不超过3次</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>劳动者申领职业技能提升补贴时，已享受同一职业（工种）高等级证书补贴的，不再享受该职业（工种）低等级证书补贴</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-info-circle text-blue-500 mt-1 mr-2"></i>
+                            <span>劳动者须在证书核发之日起12个月内申请补贴</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualification -->
+    <section id="qualification" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">报考条件</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">人工智能训练师（三级/高级工）报考条件</h3>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-8">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">1</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">工作经验要求</h4>
+                                <p class="text-gray-600">累计从事本职业或相关职业工作满10年</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">2</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">中级证书持有者</h4>
+                                <p class="text-gray-600">取得本职业或相关职业四级/中级工职业资格(职业技能等级)证书后，累计从事本职业或相关职业工作满4年</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">3</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">初级职称持有者</h4>
+                                <p class="text-gray-600">取得符合专业对应关系的初级职称(专业技术人员职业资格)后，累计从事本职业或相关职业工作满1年</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">4</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">技工院校毕业生</h4>
+                                <p class="text-gray-600">取得本专业或相关专业的技工院校高级工班及以上毕业证书(含在读应届毕业生)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">5</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">中级证书+高等教育</h4>
+                                <p class="text-gray-600">取得本职业或相关职业四级/中级工职业资格(职业技能等级)证书，并取得高等职业学校、专科及以上普通高等学校本专业或相关专业毕业证书(含在读应届毕业生)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center flex-shrink-0 mr-4">
+                                <span class="font-bold">6</span>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-800 mb-1">高等教育毕业生</h4>
+                                <p class="text-gray-600">取得经评估论证的高等职业学校、专科及以上普通高等学校本专业或相关专业的毕业证书(含在读应届毕业生)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">其他等级报考条件参考</h3>
+                
+               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="bg-white rounded-lg shadow-md p-6 card-hover transition duration-300">
+        <h4 class="text-xl font-semibold text-blue-600 mb-4 flex items-center">
+            <i class="fas fa-certificate mr-3"></i>五级/初级工
+        </h4>
+        <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                <span>年满16周岁，拟从事或已从事本职业或相关职业工作</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                <span>报考五级/初级工时，应完成至少60标准学时的专业培训，并提供具有办学资质的培训学校颁发的结业证书</span>
+            </li>
+        </ul>
+    </div>
+    
+    <div class="bg-white rounded-lg shadow-md p-6 card-hover transition duration-300">
+        <h4 class="text-xl font-semibold text-blue-600 mb-4 flex items-center">
+            <i class="fas fa-certificate mr-3"></i>四级/中级工
+        </h4>
+        <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                <span>累计从事本职业或相关职业工作满5年</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                <span>取得本职业或相关职业五级/初级工职业资格(职业技能等级)证书后，累计从事本职业或相关职业工作满3年</span>
+            </li>
+            <li class="flex items-start">
+                <i class="fas fa-check text-blue-500 mt-1 mr-2"></i>
+                <span>取得本专业或相关专业的技工院校或中等及以上职业院校、专科及以上普通高等学校毕业证书(含在读应届毕业生)</span>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Exam Details -->
+<section id="exam" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">考试形式与内容</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-blue-50 rounded-lg p-6 shadow-md card-hover transition duration-300">
+            <div class="text-blue-600 text-4xl mb-4">
+                <i class="fas fa-laptop"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">考试方式</h3>
+            <p class="text-gray-600">上机考试</p>
+        </div>
+        
+        <div class="bg-blue-50 rounded-lg p-6 shadow-md card-hover transition duration-300">
+            <div class="text-blue-600 text-4xl mb-4">
+                <i class="fas fa-book"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">考试科目</h3>
+            <ul class="space-y-2 text-gray-600">
+                <li>理论知识考试（90分钟）</li>
+                <li>技能考核考试（120分钟）</li>
+            </ul>
+        </div>
+        
+        <div class="bg-blue-50 rounded-lg p-6 shadow-md card-hover transition duration-300">
+            <div class="text-blue-600 text-4xl mb-4">
+                <i class="fas fa-award"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">合格标准</h3>
+            <p class="text-gray-600">各科成绩皆达60分（含）以上</p>
+        </div>
+    </div>
+    
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="md:flex">
+            <div class="md:w-1/2 p-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">考试内容详解</h3>
+                <div class="space-y-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">理论知识考试</h4>
+                        <ul class="space-y-2 text-gray-600 pl-5">
+                            <li class="list-disc">人工智能基础知识</li>
+                            <li class="list-disc">机器学习与深度学习原理</li>
+                            <li class="list-disc">数据标注规范与质量控制</li>
+                            <li class="list-disc">模型训练流程</li>
+                            <li class="list-disc">AI系统运维知识</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-800 mb-2">技能考核考试</h4>
+                        <ul class="space-y-2 text-gray-600 pl-5">
+                            <li class="list-disc">数据采集与处理实操</li>
+                            <li class="list-disc">数据标注实际操作</li>
+                            <li class="list-disc">模型训练参数调优</li>
+                            <li class="list-disc">AI系统问题诊断与解决</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 bg-blue-50 flex items-center justify-center p-8">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="Exam Preparation" class="rounded-lg shadow-md">
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Application Process -->
+<section id="apply" class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">报名流程</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+    
+    <div class="relative mb-12">
+        <div class="absolute left-0 md:left-1/2 h-full w-1 bg-blue-200 transform -translate-x-/2"></div>
+        
+        <div class="space-y-8">
+            <div class="relative timeline-item pl-8 md:pl-0 md:pr-8 md:w-1/2 md:ml-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">1</div>
+                        <h3 class="text-xl font-semibold">联系培训机构</h3>
+                    </div>
+                    <p class="text-gray-600">由机构协助代报名，提供专业指导</p>
+                </div>
+            </div>
+            
+            <div class="relative timeline-item pl-8 md:w-1/2">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">2</div>
+                        <h3 class="text-xl font-semibold">学习课程</h3>
+                    </div>
+                    <p class="text-gray-600">完成理论与实操培训</p>
+                    <div class="mt-3 grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <div class="bg-blue-50 p-3 rounded">
+                            <h4 class="font-medium text-blue-600">理论培训</h4>
+                            <p class="text-sm text-gray-600">PC端或手机端进行练习，提供模拟测验和专项练习</p>
+                        </div>
+                        <div class="bg-blue-50 p-3 rounded">
+                            <h4 class="font-medium text-blue-600">实操培训</h4>
+                            <p class="text-sm text-gray-600">线上学习平台，基础知识视频讲解+代码练习运行</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative timeline-item pl-8 md:pl-0 md:pr-8 md:w-1/2 md:ml-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">3</div>
+                        <h3 class="text-xl font-semibold">正式报名</h3>
+                    </div>
+                    <p class="text-gray-600">提交报名材料，包括身份证明、学历证明等</p>
+                </div>
+            </div>
+            
+            <div class="relative timeline-item pl-8 md:w-1/2">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">4</div>
+                        <h3 class="text-xl font-semibold">参加考试</h3>
+                    </div>
+                    <p class="text-gray-600">按指定时间地点参加理论和实操考试</p>
+                </div>
+            </div>
+            
+            <div class="relative timeline-item pl-8 md:pl-0 md:pr-8 md:w-1/2 md:ml-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">5</div>
+                        <h3 class="text-xl font-semibold">获取证书</h3>
+                    </div>
+                    <p class="text-gray-600">考试合格后领取职业技能等级证书</p>
+                </div>
+            </div>
+            
+            <div class="relative timeline-item pl-8 md:w-1/2">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="flex items-center mb-3">
+                        <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center mr-4">6</div>
+                        <h3 class="text-xl font-semibold">申请补贴</h3>
+                    </div>
+                    <p class="text-gray-600">符合条件者可申请职业技能提升补贴</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="md:flex">
+            <div class="md:w-1/2 p-8">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-4">报名入口</h3>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">深圳市人力资源和社会保障局官方渠道</h4>
+                            <p class="text-gray-600 mb-2">网址：<a href="http://hrss.sz.gov.cn" class="text-blue-600 hover:underline">http://hrss.sz.gov.cn</a></p>
+                            <p class="text-gray-600 text-sm">可查询最新政策通知及培训补贴申请流程</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">广东政务服务网深圳站点</h4>
+                            <p class="text-gray-600 mb-2">网址：<a href="https://www.gdzwfw.gov.cn/?region=440300" class="text-blue-600 hover:underline">https://www.gdzwfw.gov.cn/?region=440300</a></p>
+                            <p class="text-gray-600 text-sm">可在线申请职业技能培训补贴</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mr-4">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-800 mb-1">授权培训机构</h4>
+                            <p class="text-gray-600 mb-2">深圳市职业技能等级证书《人工智能训练师》培训班</p>
+                            <p class="text-gray-600 text-sm">联系专业培训机构进行报名咨询</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 bg-blue-50 flex items-center justify-center p-8">
+                <div class="max-w-md w-full">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold text-center mb-6">立即咨询报名</h3>
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="name">姓名</label>
+                                <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="name" type="text" placeholder="请输入您的姓名">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="phone">电话</label>
+                                <input class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="phone" type="tel" placeholder="请输入您的联系电话">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 text-sm font-medium mb-2" for="level">报考等级</label>
+                                <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" id="level">
+                                    <option value="">请选择报考等级</option>
+                                    <option value="5">五级/初级工</option>
+                                    <option value="4">四级/中级工</option>
+                                    <option value="3">三级/高级工</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300">提交咨询</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Career Prospects -->
+<section id="career" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">就业前景</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+    
+    <div class="bg-blue-50 rounded-xl p-8 mb-12">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6">市场需求</h3>
+        <p class="text-gray-600 mb-6">随着人工智能在制造、交通、农业、医疗、金融、物流、城市服务等领域的广泛应用，人工智能训练师的需求和规模将持续增长。根据深圳市人工智能产业协会数据，深圳地区人工智能训练师岗位需求年增长率超过50%。</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-blue-600 text-3xl mb-3">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="font-semibold mb-2">岗位需求增长</h4>
+                <p class="text-gray-600 text-sm">年增长率超过50%</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="<div class="text-blue-600 text-3xl mb-3">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h4 class="font-semibold mb-2">薪资水平</h4>
+                <p="text-gray-600 text-sm">15,000-40,000元/月</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+                <div class="text-blue-600 text-3xl mb-3">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h4 class="font-semibold mb-2">行业分布</h4>
+                <p class="text-gray-600 text-sm">覆盖10+核心行业</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mb-12">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6">就业方向</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                <div class="h-40 bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-laptop-code text-blue-600 text-5xl"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-lg mb-2">科技与互联网行业</h4>
+                    <p class="text-gray-600 text-sm">华为、字节跳动、阿里巴巴、腾讯、百度等科技巨头，负责数据标注、模型训练、算法优化等工作</p>
+                    <p class="text-blue-600 font-medium mt-3">月薪范围：15,000-30,000元</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                <div class="h-40 bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-coins text-blue-600 text-5xl"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-lg mb-2">金融行业</h4>
+                    <p class="text-gray-600 text-sm">银行、保险公司和金融科技企业，负责风险评估、欺诈检测、客户服务自动化等AI系统训练</p>
+                    <p class="text-blue-600 font-medium mt-3">月薪范围：18,000-35,000元</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                <div class="h-40 bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-shopping-cart text-blue-600 text-5xl"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-lg mb-2">零售与电商行业</h4>
+                    <p class="text-gray-600 text-sm">抖音、拼多多、京东和淘宝等电商平台，负责供应链管理、个性化推荐和客户服务AI系统优化</p>
+                    <p class="text-blue-600 font-medium mt-3">月薪范围：16,000-32,000元</p>
+                </div>
+            </div>
+            
+            <div class="bg-white rounded-lg shadow-md overflow-hidden card-hover transition duration-300">
+                <div class="h-40 bg-blue-100 flex items-center justify-center">
+                    <i class="fas fa-heartbeat text-blue-600 text-5xl"></i>
+                </div>
+                <div class="p-6">
+                    <h4 class="font-semibold text-lg mb-2">医疗健康行业</h4>
+                    <p class="text-gray-600 text-sm">医疗影像识别、病历分析、虚拟助理等领域，负责AI系统的训练和优化</p>
+                    <p class="text-blue-600 font-medium mt-3">月薪范围：20,000-40,000元</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6">职业发展路径</h3>
+        <div class="bg-white rounded-xl shadow-md p-8">
+            <div class="relative">
+                <div class="absolute left-0 top-0 h-full w-1 bg-blue-200 ml-4"></div>
+                <div class="space-y-8 pl-12">
+                    <div class="relative">
+                        <div class="absolute -left-12 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            1
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-2">初级阶段 (1-2年)</h4>
+                            <p class="text-gray-600">主要从事数据标注、数据处理等基础工作</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute -left-12 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            2
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-2">中级阶段 (2-4年)</h4>
+                            <p class="text-gray-600">负责数据质量控制、模型训练参数调优等工作</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute -left-12 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            3
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-2">高级阶段 (4-6年)</h4>
+                            <p class="text-gray-600">参与业务流程设计、算法测试、系统优化等工作</p>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <div class="absolute -left-12 top-0 w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center text-white">
+                            4
+                        </div>
+                        <div class="bg-blue-50 p-6 rounded-lg">
+                            <h4 class="font-semibold text-lg mb-2">技师/高级技师阶段 (6年以上)</h4>
+                            <p class="text-gray-600">负责团队管理、技术方案设计、创新研发等工作</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">常见问题解答</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+    
+    <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="border-b border-gray-200">
+                <button class="flex items-center justify-between w-full p-6 text-left">
+                    <span class="font-semibold text-lg">没有相关工作经验，可以直接报考人工智能训练师吗？</span>
+                    <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600">可以。对于五级/初级工，年满16周岁，拟从事本职业或相关职业工作即可报考，但需完成至少60标准学时的专业培训，并提供培训结业证书。</p>
+                </div>
+            </div>
+            
+            <div class="border-b border-gray-200">
+                <button class="flex items-center justify-between w-full p-6 text-left">
+                    <span class="font-semibold text-lg">培训是必须的吗？可以自学后直接参加考试吗？</span>
+                    <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600">对于五级/初级工，必须完成专业培训并获得结业证书；对于更高级别，如果符合相应的工作年限或学历条件，可以直接报考，但建议参加培训以提高通过率。</p>
+                </div>
+            </div>
+            
+            <div class="border-b border-gray-200">
+                <button class="flex items-center justify-between w-full p-6 text-left">
+                    <span class="font-semibold text-lg">证书全国通用吗？在其他城市是否认可？</span>
+                    <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600">是的，人工智能训练师职业技能等级证书是国家人力资源和社会保障部认可的全国通用证书，在全国范围内有效。</p>
+                </div>
+            </div>
+            
+            <div class="border-b border-gray-200">
+                <button class="flex items-center justify-between w-full p-6 text-left">
+                    <span class="font-semibold text-lg">补贴申请被拒绝的常见原因有哪些？</span>
+                    <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600">常见原因包括：申请材料不完整、超过申请期限（证书核发后12个月内）、已享受过同一职业更高等级的补贴、当年已达到补贴次数上限（3次）等。</p>
+                </div>
+            </div>
+            
+            <div class="border-b border-gray-200">
+                <button class="flex items-center justify-between w-full p-6 text-left">
+                    <span class="font-semibold text-lg">获得证书后，如何找到相关工作？</span>
+                    <i class="fas fa-chevron-down text-blue-600"></i>
+                </button>
+                <div class="px-6 pb-6 hidden">
+                    <p class="text-gray-600">可以通过以下渠道：参加培训机构组织的招聘会；在智联招聘、BOSS直聘等平台搜索"人工智能训练师"相关职位；关注深圳市人工智能产业协会发布的招聘信息；参加行业展会和交流活动，拓展人脉。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Contact -->
+<section id="contact" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+    <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-800 mb-4">联系方式</h2>
+        <div class="w-20 h-1 bg-blue-600 mx-auto"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="bg-blue-50 rounded-lg p-6 shadow-md">
+            <div class="text-blue-600 text-3xl mb-4">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">电话咨询</h3>
+            <p class="text-gray-600 mb-2">深圳市人力资源和社会保障局</p>
+            <p class="text-blue-600 font-medium">0755-12333</p>
+        </div>
+        
+        <div class="bg-blue-50 rounded-lg p-6 shadow-md">
+            <div class="text-blue-600 text-3xl mb-4">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">邮件咨询</h3>
+            <p class="text-gray-600 mb-2">深圳市人工智能产业协会</p>
+            <p class="text-blue-600 font-medium">alla_zjk@163.com</p>
+        </div>
+        
+        <div class="bg-blue-50 rounded-lg p-6 shadow-md">
+            <div class="text-blue-600 text-3xl mb-4">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">现场咨询</h3>
+            <p class="text-gray-600">深圳市各区人力资源服务中心</p>
+        </div>
+    </div>
+    
+    <div class="bg-blue-50 rounded-xl p-8">
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6">官方资料链接</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="http://hrss.sz.gov.cn" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold">深圳市人力资源和社会保障局</h4>
+                    <p class="text-gray-600 text-sm">http://hrss.sz.gov.cn</p>
+                </div>
+            </a>
+            
+            <a href="https://www.szaicx.com" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold">深圳市人工智能产业协会</h4>
+                    <p class="text-gray-600 text-sm">https://www.szaicx.com</p>
+                </div>
+            </a>
+            
+            <a href="https://www.gdzwfw.gov.cn/?region=440300" class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition duration-300 flex items-center">
+                <div class="bg-blue-100 text-blue-600 rounded-full w-10 h-10 flex items-center justify-center mr-4">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <div>
+                    <h4 class="font-semibold">广东政务服务网深圳站点</h4>
+                    <p class="text-gray-600 text-sm">https://www.gdzwfw.gov.cn</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="gradient-bg text-white py-12">
+<div class="container mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+            <h3 class="text-2xl font-bold mb-4">深圳人工智能训练师职业技能补贴指南</h3>
+            <p class="text-blue-100">© 2025 深圳市人力资源和社会保障局 版权所有</p>
+        </div>
+        <div class="flex space-x-6">
+            <a href="#" class="text-white hover:text-blue-200 transition duration-300">
+                <i class="fab fa-weixin text-2xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-blue-200 transition duration-300">
+                <i class="fab fa-weibo text-2xl"></i>
+            </a>
+            <a href="#" class="text-white hover:text-blue-200 transition duration-300">
+                <i class="fas fa-envelope text-2xl"></i>
+            </a>
+        </div>
+    </div>
+    <div class="border-t border-blue-400 mt-8 pt-8 text-center text-blue-100 text-sm">
+        <p>注：本指南基于2025年6月最新政策整理，具体补贴标准和申请流程可能会有调整，请以深圳市人力资源和社会保障局最新公告为准。</p>
+    </div>
+</div>
+</footer>
+
+<script>
+// FAQ toggle functionality
+document.querySelectorAll('#faq button').forEach(button => {
+    button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        
+        content.classList.toggle('hidden');
+        icon.classList.toggle('fa-chevron-down');
+        icon.classList.toggle('fa-chevron-up');
+    });
+});
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global AI+Art Master's Programs Comparison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f9f9f9;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6e3b8e 0%, #8e44ad 100%);
+        }
+        
+        .program-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .comparison-table th {
+            background-color: #6e3b8e;
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f3e5f5;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background-color: #8e44ad;
+            color: white;
+            margin: 0 auto 15px;
+            font-size: 24px;
+        }
+        
+        .tab-active {
+            border-bottom: 3px solid #8e44ad;
+            color: #8e44ad;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Global AI+Art Master's Programs</h1>
+            <p class="text-xl md:text-2xl mb-8">Comprehensive Comparison Report</p>
+            <p class="max-w-3xl mx-auto text-lg">Explore the intersection of artificial intelligence and artistic expression through our in-depth analysis of leading graduate programs worldwide.</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center mb-4 md:mb-0">
+                    <i class="fas fa-palette text-purple-700 text-2xl mr-2"></i>
+                    <span class="text-xl font-bold text-purple-700">AI+Art Guide</span>
+                </div>
+                <div class="flex space-x-1 md:space-x-6">
+                    <a href="#overview" class="px-3 py-2 text-gray-700 hover:text-purple-700 font-medium">Overview</a>
+                    <a href="#programs" class="px-3 py-2 text-gray-700 hover:text-purple-700 font-medium">Programs</a>
+                    <a href="#comparison" class="px-3 py-2 text-gray-700 hover:text-purple-700 font-medium">Comparison</a>
+                    <a href="#resources" class="px-3 py-2 text-gray-700 hover:text-purple-700 font-medium">Resources</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-12">
+        <!-- Introduction Section -->
+        <section id="overview" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Embracing the New Era of AI and Art</h2>
+                <div class="w-24 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+                    As artificial intelligence (AI) technology rapidly advances, particularly in generative AI breakthroughs across visual arts, text, and music, the creative industries are undergoing profound transformation. This report provides a comprehensive comparison of leading global master's programs at the intersection of AI and art.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Global Coverage</h3>
+                    <p class="text-gray-600">Detailed analysis of programs from Asia, Europe, and North America, highlighting regional approaches to AI+Art education.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Multi-Dimensional Comparison</h3>
+                    <p class="text-gray-600">Evaluation across key factors including curriculum, faculty, resources, costs, and career outcomes.</p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="feature-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Strategic Insights</h3>
+                    <p class="text-gray-600">Actionable advice for selecting programs based on your artistic practice, technical background, and career goals.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Section -->
+        <section id="programs" class="mb-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Featured Programs</h2>
+                <div class="w-24 h-1 bg-purple-600 mx-auto mb-6"></div>
+                <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+                    Explore our curated selection of leading graduate programs at the intersection of artificial intelligence and artistic practice.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Tsinghua University -->
+                <div class="program-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Tsinghua_University_Logo.svg/1200px-Tsinghua_University_Logo.svg.png" alt="Tsinghua University" class="h-24 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Tsinghua University</h3>
+                        <p class="text-gray-600 mb-4">Information Art & Design (AI Track)</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Beijing, China</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">2-3 years</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">¥6-25万</span>
+                        </div>
+                        <a href="#tsinghua" class="text-purple-700 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- CAFA -->
+                <div class="program-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4e/China_Central_Academy_of_Fine_Arts_logo.svg/1200px-China_Central_Academy_of_Fine_Arts_logo.svg.png" alt="CAFA" class="h-24 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Central Academy of Fine Arts</h3>
+                        <p class="text-gray-600 mb-4">Art & Technology Programs</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Beijing, China</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">3 years</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">¥10-40万</span>
+                        </div>
+                        <a href="#cafa" class="text-purple-700 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- CAA -->
+                <div class="program-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/China_Academy_of_Art_logo.svg/1200px-China_Academy_of_Art_logo.svg.png" alt="CAA" class="h-24 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">China Academy of Art</h3>
+                        <p class="text-gray-600 mb-4">Intelligent Design & Cross-Media Arts</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Hangzhou, China</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">3 years</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">¥10-45万</span>
+                        </div>
+                        <a href="#caa" class="text-purple-700 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- NYU Tisch -->
+                <div class="program-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/NYU_Tisch_School_of_the_Arts_Logo.svg/1200px-NYU_Tisch_School_of_the_Arts_Logo.svg.png" alt="NYU Tisch" class="h-24 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">NYU Tisch School of the Arts</h3>
+                        <p class="text-gray-600 mb-4">Interactive Media Arts (IMA/ITP)</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">New York, USA</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">2 years</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">$150-200K</span>
+                        </div>
+                        <a href="#nyu" class="text-purple-700 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- UAL Camberwell -->
+                <div class="program-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d6/University_of_the_Arts_London_logo.svg/1200px-University_of_the_Arts_London_logo.svg.png" alt="UAL" class="h-24 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">UAL Camberwell College</h3>
+                        <p class="text-gray-600 mb-4">Digital Arts & Design Programs</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">London, UK</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">1-2 years</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">£45-70K</span>
+                        </div>
+                        <a href="#ual" class="text-purple-700 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- MIT Media Lab -->
+                <div class="program-card bg-white rounded-lg overflow-hidden shadow-md">
+                    <div class="h-48 bg-purple-100 flex items-center justify-center">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/MIT_logo.svg/1200px-MIT_logo.svg.png" alt="MIT" class="h-24 object-contain">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">MIT Media Lab</h3>
+                        <p class="text-gray-600 mb-4">Media Arts & Sciences (MAS)</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Cambridge, USA</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">2 years</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Fully Funded</span>
+                        </div>
+                        <a href="#mit" class="text-purple-700 font-medium hover:underline">View Details →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Program Details Section -->
+        <section class="mb-20">
+            <div class="flex border-b mb-8">
+                <button class="tab-btn px-6 py-3 font-medium text-gray-600 tab-active" data-tab="tsinghua">Tsinghua</button>
+                <button class="tab-btn px-6 py-3 font-medium text-gray-600" data-tab="cafa">CAFA</button>
+                <button class="tab-btn px-6 py-3 font-medium text-gray-600" data-tab="caa">CAA</button>
+                <button class="tab-btn px-6 py-3 font-medium text-gray-600" data-tab="nyu">NYU Tisch</button>
+                <button class="tab-btn px-6 py-3 font-medium text-gray-600" data-tab="ual">UAL Camberwell</button>
+                <button class="tab-btn px-6 py-3 font-medium text-gray-600" data-tab="mit">MIT Media Lab</button>
+            </div>
+
+            <!-- Tsinghua University Details -->
+            <div id="tsinghua" class="tab-content">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                    <div class="flex flex-col md:flex-row gap-8 mb-8">
+                        <div class="md:w-1/3">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Tsinghua_University_Logo.svg/1200px-Tsinghua_University_Logo.svg.png" alt="Tsinghua University" class="w-full max-w-xs mx-auto">
+                        </div>
+                        <div class="md:w-2/3">
+                            <h2 class="text-2xl font-bold mb-4">Tsinghua University - Information Art & Design (AI Track)</h2>
+                            <div class="flex flex-wrap gap-2 mb-6">
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Beijing, China</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">2-3 years</span>
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">¥6-25万 total</span>
+                                <span class="bg-purple-100 text```html
+                                <span class="bg-purple-100 text-purple-800 px-3 py-1 rounded-full">Highly Competitive</span>
+                            </div>
+                            <p class="text-gray-700 mb-4">
+                                Tsinghua University's Academy of Arts & Design offers a cutting-edge program at the intersection of information technology and artistic practice, with specialized tracks in AI applications for art and design.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-purple-700">Program Highlights</h3>
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Focus on AI applications in visual arts, interactive installations, and design innovation</li>
+                                <li>Access to Tsinghua's world-class engineering and computer science resources</li>
+                                <li>Strong emphasis on Chinese cultural context in digital art creation</li>
+                                <li>Opportunities for industry collaboration with leading tech companies</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-purple-700">Admission Requirements</h3>
+                            <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                                <li>Portfolio demonstrating artistic ability and technical skills</li>
+                                <li>HSK 5 (210+) for Chinese-taught programs</li>
+                                <li>Bachelor's degree in relevant field</li>
+                                <li>Strong performance in national entrance exam for domestic students</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-700">Curriculum Focus</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">AI Art Theory</span>
+                            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">Generative Design</span>
+                            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">Interactive Systems</span>
+                            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">Data Visualization</span>
+                            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">VR/AR Art</span>
+                            <span class="bg-gray-200 text-gray-800 px-3 py-1 rounded-full">Creative Coding</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-3 text-purple-700">Career Paths</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-2">Creative Technologist</h4>
+                                <p class="text-sm text-gray-600">At tech companies and design firms</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-2">AI Artist</h4>
+                                <p class="text-sm text-gray-600">Exhibiting in galleries and festivals</p>
+                            </div>
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h4 class="font-medium mb-2">UX/UI Designer</h4>
+                                <p class="text-sm text-gray-600">Specializing in intelligent interfaces</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comparison Section -->
+            <section id="comparison" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Program Comparison</h2>
+                    <div class="w-24 h-1 bg-purple-600 mx-auto mb-6"></div>
+                    <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+                        Key metrics for comparing AI+Art graduate programs across different institutions.
+                    </p>
+                </div>
+
+                <div class="overflow-x-auto">
+                    <table class="comparison-table w-full bg-white rounded-lg shadow-md overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th class="py-3 px-4 text-left">Criteria</th>
+                                <th class="py-3 px-4 text-center">Tsinghua</th>
+                                <th class="py-3 px-4 text-center">CAFA</th>
+                                <th class="py-3 px-4 text-center">CAA</th>
+                                <th class="py-3 px-4 text-center">NYU</th>
+                                <th class="py-3 px-4 text-center">UAL</th>
+                                <th class="py-3 px-4 text-center">MIT</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Duration</td>
+                                <td class="py-3 px-4 text-center">2-3 yrs</td>
+                                <td class="py-3 px-4 text-center">3 yrs</td>
+                                <td class="py-3 px-4 text-center">3 yrs</td>
+                                <td class="py-3 px-4 text-center">2 yrs</td>
+                                <td class="py-3 px-4 text-center">1-2 yrs</td>
+                                <td class="py-3 px-4 text-center">2 yrs</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Total Cost</td>
+                                <td class="py-3 px-4 text-center">¥6-25万</td>
+                                <td class="py-3 px-4 text-center">¥10-40万</td>
+                                <td class="py-3 px-4 text-center">¥10-45万</td>
+                                <td class="py-3 px-4 text-center">$150-200K</td>
+                                <td class="py-3 px-4 text-center">£45-70K</td>
+                                <td class="py-3 px-4 text-center">Fully Funded</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Portfolio Required</td>
+                                <td class="py-3 px-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="py-3 px-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="py-3 px-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="py-3 px-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="py-3 px-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                                <td class="py-3 px-4 text-center"><i class="fas fa-check text-green-500"></i></td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">AI Focus</td>
+                                <td class="py-3 px-4 text-center">High</td>
+                                <td class="py-3 px-4 text-center">Medium</td>
+                                <td class="py-3 px-4 text-center">Medium</td>
+                                <td class="py-3 px-4 text-center">Very High</td>
+                                <td class="py-3 px-4 text-center">Medium</td>
+                                <td class="py-3 px-4 text-center">Very High</td>
+                            </tr>
+                            <tr>
+                                <td class="py-3 px-4 font-medium">Language</td>
+                                <td class="py-3 px-4 text-center">Chinese</td>
+                                <td class="py-3 px-4 text-center">Chinese</td>
+                                <td class="py-3 px-4 text-center">Chinese</td>
+                                <td class="py-3 px-4 text-center">English</td>
+                                <td class="py-3 px-4 text-center">English</td>
+                                <td class="py-3 px-4 text-center">English</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Resources Section -->
+            <section id="resources" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Additional Resources</h2>
+                    <div class="w-24 h-1 bg-purple-600 mx-auto mb-6"></div>
+                    <p class="max-w-3xl mx-auto text-gray-600 text-lg">
+                        Further reading and tools to support your AI+Art education journey.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-700">Application Timeline</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-purple-500 mt-1 mr-2"></i>
+                                <span>12-18 months before: Research programs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-purple-500 mt-1 mr-2"></i>
+                                <span>9-12 months before: Prepare portfolio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-purple-500 mt-1 mr-2"></i>
+                                <span>6-9 months before: Take language tests</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-calendar-alt text-purple-500 mt-1 mr-2"></i>
+                                <span>3-6 months before: Submit applications</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-700">Portfolio Tips</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Show process, not just final products</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Include technical documentation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Demonstrate conceptual depth</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check-circle text-purple-500 mt-1 mr-2"></i>
+                                <span>Show range across media</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-3 text-purple-700">Scholarship Sources</h3>
+                        <ul class="space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <i class="fas fa-search-dollar text-purple-500 mt-1 mr-2"></i>
+                                <span>University financial aid offices</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-search-dollar text-purple-500 mt-1 mr-2"></i>
+                                <span>Government cultural programs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-search-dollar text-purple-500 mt-1 mr-2"></i>
+                                <span>Tech company sponsorships</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-search-dollar text-purple-500 mt-1 mr-2"></i>
+                                <span>Art foundations and nonprofits</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">AI+Art Guide</h3>
+                    <p class="mb-4">Your comprehensive resource for graduate programs at the intersection of artificial intelligence and artistic practice.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-white hover:text-purple-300"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-white hover:text-purple-300"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="#" class="text-white hover:text-purple-300"><i class="fab fa-linkedin fa-lg"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#overview" class="hover:underline">Report Overview</a></li>
+                        <li><a href="#programs" class="hover:underline">Featured Programs</a></li>
+                        <li><a href="#comparison" class="hover:underline">Program Comparison</a></li>
+                        <li><a href="#resources" class="hover:underline">Application Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Newsletter</h3>
+                    <p class="mb-4">Subscribe for updates on new programs and resources.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 w-full rounded-l focus:outline-none text-gray-800">
+                        <button type="submit" class="bg-purple-800 hover:bg-purple-700 px-4 py-2 rounded-r">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="border-t border-purple-400 mt-8 pt-8 text-center">
+                <p>&copy; 2023 AI+Art Guide. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                document.querySelectorAll('.tab-btn').forEach(b => {
+                    b.classList.remove('tab-active');
+                });
+                
+                // Add active class to clicked button
+                btn.classList.add('tab-active');
+                
+                // Hide all tab contents
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.style.display = 'none';
+                });
+                
+                // Show selected tab content
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).style.display = 'block';
+            });
+        });
+
+        // Initialize first tab as active
+        document.querySelector('.tab-btn').click();
+    </script>
+</body>
+</html>

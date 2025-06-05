@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDXL Training Documentation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+            color: #111827;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+        }
+        
+        .code-block {
+            background-color: #1e293b;
+            color: #f8fafc;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+        }
+        
+        .nav-link:hover {
+            color: #8b5cf6;
+        }
+        
+        .section-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        
+        .section-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .sidebar {
+            height: calc(100vh - 4rem);
+            position: sticky;
+            top: 4rem;
+            overflow-y: auto;
+        }
+        
+        .content {
+            max-width: 80ch;
+        }
+        
+        .prose a {
+            color: #7c3aed;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .prose a:hover {
+            text-decoration: underline;
+        }
+        
+        .prose h2, .prose h3, .prose h4 {
+            scroll-margin-top: 6rem;
+        }
+        
+        .prose pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+        }
+        
+        .prose code {
+            background-color: #e2e8f0;
+            color: #334155;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-size: 0.9em;
+        }
+        
+        .prose pre code {
+            background-color: transparent;
+            color: inherit;
+            padding: 0;
+        }
+        
+        .tag {
+            display: inline-block;
+            background-color: #e9d5ff;
+            color: #7e22ce;
+            padding: 0.25rem 0.5rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <i class="fas fa-cube text-purple-600 text-2xl mr-2"></i>
+                        <span class="text-xl font-bold text-gray-900">SDXL Training</span>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
+                    <a href="#overview" class="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Overview</a>
+                    <a href="#trigger-words" class="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Trigger Words</a>
+                    <a href="#architecture" class="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Architecture</a>
+                    <a href="#training" class="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">Training</a>
+                    <a href="#faq" class="nav-link text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">FAQ</a>
+                </div>
+                <div class="flex items-center">
+                    <a href="https://github.com/kohya-ss/sd-scripts" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white gradient-bg hover:opacity-90">
+                        <i class="fab fa-github mr-2"></i> View on GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="gradient-bg">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                    Mastering SDXL LoRA Training
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-purple-100">
+                    A comprehensive guide to training Stable Diffusion XL models with LoRA for fine-tuned control and specialized generation.
+                </p>
+                <div class="mt-10 flex justify-center space-x-4">
+                    <a href="#trigger-words" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-purple-700 bg-white hover:bg-purple-50">
+                        Get Started
+                    </a>
+                    <a href="https://github.com/kohya-ss/sd-scripts" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-800 bg-opacity-60 hover:bg-opacity-70">
+                        <i class="fab fa-github mr-2"></i> GitHub Repo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Sidebar -->
+            <div class="lg:w-64 flex-shrink-0 hidden lg:block sidebar">
+                <nav class="space-y-1">
+                    <div class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-4">Documentation</div>
+                    <a href="#overview" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md">Overview</a>
+                    <a href="#trigger-words" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md">Trigger Word Training</a>
+                    <a href="#architecture" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md">SDXL Architecture</a>
+                    <a href="#training" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md">Training Process</a>
+                    <a href="#parameters" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md ml-4">Key Parameters</a>
+                    <a href="#best-practices" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md ml-4">Best Practices</a>
+                    <a href="#faq" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md">FAQ & Troubleshooting</a>
+                    <a href="#rl" class="block px-3 py-2 text-sm font-medium text-gray-700 hover:text-purple-600 rounded-md">RL Applications</a>
+                </nav>
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1">
+                <!-- Overview Section -->
+                <section id="overview" class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">SDXL Training Overview</h2>
+                    <div class="prose max-w-none">
+                        <p>
+                            Stable Diffusion XL (SDXL) represents a significant advancement in text-to-image generation, offering higher resolution outputs and more nuanced control. The <code>sd-scripts</code> project provides powerful tools for fine-tuning SDXL models using Low-Rank Adaptation (LoRA), enabling specialized generation capabilities while maintaining the model's general knowledge.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md section-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex-shrink-0 bg-purple-100 p-3 rounded-full">
+                                        <i class="fas fa-magic text-purple-600"></i>
+                                    </div>
+                                    <h3 class="ml-3 text-lg font-medium text-gray-900">LoRA Advantages</h3>
+                                </div>
+                                <p class="text-gray-600">
+                                    LoRA allows efficient fine-tuning by injecting small trainable matrices into the model rather than retraining all weights. This makes it perfect for:
+                                </p>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Character-specific generation</li>
+                                    <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Artistic style adaptation</li>
+                                    <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Object specialization</li>
+                                    <li><i class="fas fa-check-circle text-purple-500 mr-2"></i> Concept combination</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md section-card">
+                                <div class="flex items-center mb-4">
+                                    <div class="flex-shrink-0 bg-purple-100 p-3 rounded-full">
+                                        <i class="fas fa-cogs text-purple-600"></i>
+                                    </div>
+                                    <h3 class="ml-3 text-lg font-medium text-gray-900">Key Components</h3>
+                                </div>
+                                <p class="text-gray-600">
+                                    SDXL introduces several architectural improvements that enhance training:
+                                </p>
+                                <ul class="mt-2 space-y-1 text-gray-600">
+                                    <li><i class="fas fa-microchip text-purple-500 mr-2"></i> Dual text encoders</li>
+                                    <li><i class="fas fa-expand text-purple-500 mr-2"></i> Enhanced U-Net architecture</li>
+                                    <li><i class="fas fa-ruler-combined text-purple-500 mr-2"></i> Size conditioning</li>
+                                    <li><i class="fas fa-tags text-purple-500 mr-2"></i> Improved token handling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Trigger Words Section -->
+                <section id="trigger-words" class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Trigger Word Training</h2>
+                    <div class="prose max-w-none">
+                        <p>
+                            In LoRA fine-tuning, particularly for specific characters, objects, or styles, the "trigger word" is a core and crucial concept. It acts like a key that can precisely "unlock" and activate the specific knowledge learned by the LoRA module during inference.
+                        </p>
+                        
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-lightbulb text-yellow-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <p class="text-sm text-yellow-700">
+                                        A well-trained trigger word can significantly improve the LoRA's usability, controllability, and generalization capabilities.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Choosing the Right Trigger Word</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-green-200">
+                                <h4 class="font-medium text-green-700 mb-3"><i class="fas fa-check-circle mr-2"></i>Good Trigger Words</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Nonsense syllables: <code>ohwx</code>, <code>zksk</code>, <code>bepisme</code></li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Concept + rare word: <code>MyFancyStyle</code>, <code>CharacterZKSK</code></li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i>Existing but obscure words</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-red-200">
+                                <h4 class="font-medium text-red-700 mb-3"><i class="fas fa-times-circle mr-2"></i>Bad Trigger Words</h4>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li><i class="fas fa-times text-red-500 mr-2"></i>Common words: <code>beautiful girl</code></li>
+                                    <li><i class="fas fa-times text-red-500 mr-2"></i>Generic phrases: <code>my character</code></li>
+                                    <li><i class="fas fa-times text-red-500 mr-2"></i>Vague descriptors: <code>cool style</code></li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Training Configuration</h3>
+                        
+                        <p>To effectively train a trigger word, you must configure specific parameters in <code>sd-scripts</code>:</p>
+                        
+                        <div class="code-block my-6">
+                            <span class="text-purple-400"># Essential trigger word training parameters</span><br>
+                            --shuffle_caption <span class="text-gray-400"># MUST be enabled</span><br>
+                            --keep_tokens=1 <span class="text-gray-400"># Number of tokens to keep at start (usually 1)</span><br>
+                            --caption_tag_dropout_rate=0.05 <span class="text-gray-400"># Randomly drop tags (except trigger)</span><br>
+                            --network_dim=64 <span class="text-gray-400"># LoRA rank</span><br>
+                            --network_alpha=32 <span class="text-gray-400"># Scaling factor</span>
+                        </div>
+                        
+                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 my-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-info-circle text-blue-500"></i>
+                                </div>
+                                <div class="ml-3">
+                                    <h4 class="text-sm font-medium text-blue-800">Why Shuffle Captions?</h4>
+                                    <p class="text-sm text-blue-700 mt-1">
+                                        <code>--shuffle_caption</code> randomly reorders tags (except the trigger word) to force the model to learn the atomic association between the trigger word and the core visual concept, rather than memorizing tag sequences.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Underlying Principles</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                            <div class="bg-white p-4 rounded-lg shadow border border-purple-100">
+                                <div class="text-purple-600 mb-2">
+                                    <i class="fas fa-atom text-xl"></i>
+                                </div>
+                                <h4 class="font-medium text-gray-800">Text Embedding Space</h4>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Rare trigger words occupy "vacant" areas in the embedding space, allowing clean concept binding without interferencefrom existing knowledge.
+                                </p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow border border-purple-100">
+                                <div class="text-purple-600 mb-2">
+                                    <i class="fas fa-bullseye text-xl"></i>
+                                </div>
+                                <h4 class="font-medium text-gray-800">Cross-Attention</h4>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    The trigger word's embedding becomes a strong signal that focuses the U-Net's attention on the specific learned features.
+                                </p>
+                            </div>
+                            <div class="bg-white p-4 rounded-lg shadow border border-purple-100">
+                                <div class="text-purple-600 mb-2">
+                                    <i class="fas fa-project-diagram text-xl"></i>
+                                </div>
+                                <h4 class="font-medium text-gray-800">LoRA Pathways</h4>
+                                <p class="text-sm text-gray-600 mt-1">
+                                    Gradients flow primarily through LoRA modules associated with the trigger word, specializing those weights.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Architecture Section -->
+                <section id="architecture" class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">SDXL Core Architecture</h2>
+                    <div class="prose max-w-none">
+                        <p>
+                            SDXL's powerful performance stems from its carefully designed components that work together to achieve high-quality image generation:
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 my-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md section-card">
+                                <h3 class="text-lg font-medium text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-keyboard text-purple-600 mr-2"></i> Dual Text Encoders
+                                </h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><strong>TE1</strong>: OpenCLIP-ViT-L/14 (768D)</li>
+                                    <li><strong>TE2</strong>: OpenCLIP-ViT-bigG/14 (1280D)</li>
+                                    <li>Combined for richer semantic understanding</li>
+                                    <li>TE2 provides pooled output for global context</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md section-card">
+                                <h3 class="text-lg font-medium text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-network-wired text-purple-600 mr-2"></i> Enhanced U-Net
+                                </h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>More Transformer blocks in deep layers</li>
+                                    <li>Processes concatenated text embeddings</li>
+                                    <li>Handles size conditioning</li>
+                                    <li>Higher resolution capabilities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md section-card">
+                                <h3 class="text-lg font-medium text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-compress-arrows-alt text-purple-600 mr-2"></i> VAE
+                                </h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li>Specialized for SDXL</li>
+                                    <li>Scale factor: 0.13025</li>
+                                    <li>Converts between pixel and latent space</li>
+                                    <li>Critical for training efficiency</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Text Conditioning Flow</h3>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg my-6">
+                            <div class="flex flex-col md:flex-row items-center justify-between">
+                                <div class="w-full md:w-1/2 mb-6 md:mb-0">
+                                    <ol class="space-y-4">
+                                        <li class="flex items-start">
+                                            <span class="flex-shrink-0 bg-purple-100 text-purple-800 font-bold rounded-full h-8 w-8 flex items-center justify-center mr-3">1</span>
+                                            <div>
+                                                <h4 class="font-medium text-gray-800">Tokenization</h4>
+                                                <p class="text-sm text-gray-600">Input text processed by two tokenizers (TE1 & TE2)</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="flex-shrink-0 bg-purple-100 text-purple-800 font-bold rounded-full h-8 w-8 flex items-center justify-center mr-3">2</span>
+                                            <div>
+                                                <h4 class="font-medium text-gray-800">Text Encoding</h4>
+                                                <p class="text-sm text-gray-600">Dual encoders generate hidden states (768D + 1280D)</p>
+                                            </div>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="flex-shrink-0 bg-purple-100 text-purple-800 font-bold rounded-full h-8 w-8 flex items-center justify-center mr-3">3</span>
+                                            <div>
+                                                <h4 class="font-medium text-gray-800">Concatenation</h4>
+                                                <p class="text-sm text-gray-600">Hidden states combined into 2048D sequence</p>
+                                            </div>
+                                        </li>
+                                    </ol>
+                                </div>
+                                <div class="w-full md:w-1/2">
+                                    <div class="bg-white p-4 rounded-lg shadow-inner border border-gray-200">
+                                        <div class="text-xs font-mono text-gray-500 mb-2">library/train_util.py</div>
+                                        <pre class="text-xs overflow-x-auto">def get_hidden_states_sdxl(
+    tokenizers, text_encoders, 
+    input_ids1, input_ids2,
+    max_token_length=225
+):
+    # Get encoder hidden states from both TEs
+    encoder_hidden_states1 = text_encoders[0](input_ids1).last_hidden_state
+    encoder_hidden_states2 = text_encoders[1](input_ids2).last_hidden_state
+    
+    # Get pooled output from TE2
+    pool2 = text_encoders[1].get_pooled_output(input_ids2)
+    
+    # Concatenate along feature dimension
+    concat_hidden_states = torch.cat(
+        [encoder_hidden_states1, encoder_hidden_states2], dim=2
+    )
+    
+    return concat_hidden_states, pool2</pre>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Training Section -->
+                <section id="training" class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">SDXL LoRA Training Process</h2>
+                    <div class="prose max-w-none">
+                        <p>
+                            The training workflow for SDXL LoRA involves several carefully orchestrated steps to ensure effective learning while maintaining the model's generalization capabilities.
+                        </p>
+                        
+                        <h3 class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Core Training Loop</h3>
+                        
+                        <div class="bg-gray-800 rounded-lg p-6 my-6">
+                            <div class="flex items-center text-white mb-4">
+                                <i class="fas fa-code-branch mr-2"></i>
+                                <span class="font-mono">sdxl_train_network.py</span>
+                            </div>
+                            <pre class="text-sm text-gray-300 overflow-x-auto"># Simplified training loop
+for epoch in range(max_train_epochs):
+    for batch in train_dataloader:
+        # 1. Prepare latents (VAE encode if not cached)
+        latents = batch["latents"] * vae_scale_factor
+        
+        # 2. Get text conditioning
+        text_conds = get_text_cond(batch)
+        
+        # 3. Sample noise and timesteps
+        noise, noisy_latents, timesteps = get_noise_and_timesteps(latents)
+        
+        # 4. U-Net prediction (with LoRA)
+        noise_pred = unet(
+            noisy_latents, timesteps, 
+            encoder_hidden_states=text_conds[0],
+            added_cond_kwargs={
+                "text_embeds": text_conds[1],
+                "time_ids": size_embeddings
+            }
+        ).sample
+        
+        # 5. Calculate loss (v-prediction)
+        target = noise_scheduler.get_velocity(latents, noise, timesteps)
+        loss = F.mse_loss(noise_pred.float(), target.float(), reduction="none")
+        
+        # 6. Apply Min-SNR weighting if enabled
+        if args.min_snr_gamma:
+            loss = apply_snr_weight(loss, timesteps, noise_scheduler, args.min_snr_gamma)
+        
+        # 7. Backpropagation (only updates LoRA weights)
+        accelerator.backward(loss.mean())
+        optimizer.step()
+        optimizer.zero_grad()</pre>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-2">Key Components</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> <strong>Dual Text Conditioning</strong>: Combines TE1 and TE2 outputs</li>
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> <strong>Size Embeddings</strong>: Original, crop, and target dimensions</li>
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> <strong>v-Prediction</strong>: Predicts velocity rather than noise</li>
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> <strong>Min-SNR Weighting</strong>: Balances loss across timesteps</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800 mb-2">LoRA Specifics</h4>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> Injected into attention and FFN layers</li>
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> Separate prefixes for TE1/TE2/U-Net</li>
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> Frozen base weights + trainable LoRA</li>
+                                    <li><i class="fas fa-circle text-purple-500 mr-2 text-xs"></i> Low-rank adaptation (rank=network_dim)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <h3 id="parameters" class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Critical Training Parameters</h3>
+                        
+                        <div class="overflow-x-auto my-6">
+                            <table class="min-w-full divide-y divide-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Parameter</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Typical Value</th>
+                                        <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Purpose</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bg-white divide-y divide-gray-200">
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--network_dim</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">32-128</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">LoRA rank (model capacity)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--network_alpha</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">dim/2 or 1</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">LoRA scaling factor</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--unet_lr</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1e-4 to 5e-5</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">U-Net learning rate</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--text_encoder_lr</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1e-5 to 5e-6</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">TE learning rate (if trained)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">--min_snr_gamma</td>
+                                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">5</td>
+                                        <td class="px-6 py-4 text-sm text-gray-500">Timestep weighting</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <h3 id="best-practices" class="text-2xl font-semibold text-gray-800 mt-8 mb-4">Best Practices Checklist</h3>
+                        
+                        <div class="bg-white shadow rounded-lg overflow-hidden my-6">
+                            <div class="p-6">
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <span class="h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center">
+                                                <i class="fas fa-check text-purple-600 text-xs"></i>
+                                            </span>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h4 class="text-sm font-medium text-gray-900">Data Quality > Quantity</h4>
+                                            <p class="text-sm text-gray-500">15-20 high-quality, diverse images often better than 100 low-quality/repetitive ones</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <span class="h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center">
+                                                <i class="fas fa-check text-purple-600 text-xs"></i>
+                                            </span>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h4 class="text-sm font-medium text-gray-900">Caption Structure</h4>
+                                            <p class="text-sm text-gray-500">Trigger word first, then general descriptive tags</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <span class="h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center">
+                                                <i class="fas fa-check text-purple-600 text-xs"></i>
+                                            </span>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h4 class="text-sm font-medium text-gray-900">Learning Rate Strategy</h4>
+                                            <p class="text-sm text-gray-500">Start with unet_lr=1e-4, text_encoder_lr=1/5 to 1/10 of unet_lr</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <span class="h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center">
+                                                <i class="fas fa-check text-purple-600 text-xs"></i>
+                                            </span>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h4 class="text-sm font-medium text-gray-900">Rank Selection</h4>
+                                            <p class="text-sm text-gray-500">32-128 for character LoRAs, lower ranks may generalize better</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="flex-shrink-0">
+                                            <span class="h-6 w-6 rounded-full bg-purple-100 flex items-center justify-center">
+                                                <i class="fas fa-check text-purple-600 text-xs"></i>
+                                            </span>
+                                        </div>
+                                        <div class="ml-3">
+                                            <h4 class="<h4 class="text-sm font-medium text-gray-900">Advanced Parameters</h4>
+                                            <p class="text-sm text-gray-500">--noise_offset=0.05 improves contrast, --min_snr_gamma=5 stabilizes training</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section id="faq" class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">FAQ & Troubleshooting</h2>
+                    <div class="prose max-w-none">
+                        <div class="space-y-6">
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <div class="px-6 py-5 border-b border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-900">How to prevent overfitting?</h3>
+                                </div>
+                                <div class="px-6 py-4">
+                                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                        <li>Use more diverse training images</li>
+                                        <li>Reduce <code>network_dim</code> (try 16-64 instead of 128+)</li>
+                                        <li>Lower learning rate (<code>--unet_lr 5e-5</code>)</li>
+                                        <li>Train for fewer epochs</li>
+                                        <li>Use <code>--caption_tag_dropout_rate</code></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <div class="px-6 py-5 border-b border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-900">Why isn't my trigger word working?</h3>
+                                </div>
+                                <div class="px-6 py-4">
+                                    <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                                        <li>Ensure <code>--shuffle_caption</code> is enabled</li>
+                                        <li>Verify <code>--keep_tokens</code> matches token count</li>
+                                        <li>Check tokenizer output for your word (should be single token)</li>
+                                        <li>Make sure trigger appears in every training caption</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-white shadow rounded-lg overflow-hidden">
+                                <div class="px-6 py-5 border-b border-gray-200">
+                                    <h3 class="text-lg font-medium text-gray-900">Natural language vs tag captions?</h3>
+                                </div>
+                                <div class="px-6 py-4">
+                                    <p class="text-gray-600">
+                                        Natural sentences better utilize SDXL's text encoders, while tags offer more precise control. For character LoRAs, consistent tag-based captions often work best. Mix both approaches for complex concepts.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RL Section -->
+                <section id="rl" class="mb-16">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-6">Reinforcement Learning Applications</h2>
+                    <div class="prose max-w-none">
+                        <p>
+                            While not currently implemented in <code>sd-scripts</code>, Reinforcement Learning (RL) concepts like RLHF (Reinforcement Learning from Human Feedback) show promise for enhancing SDXL training.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-8">
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-blue-100">
+                                <h3 class="text-lg font-medium text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-thumbs-up text-blue-500 mr-2"></i> Potential Benefits
+                                </h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-circle text-blue-300 mr-2 text-xs"></i> Better alignment with human preferences</li>
+                                    <li><i class="fas fa-circle text-blue-300 mr-2 text-xs"></i> Improved aesthetic quality</li>
+                                    <li><i class="fas fa-circle text-blue-300 mr-2 text-xs"></i> Enhanced prompt following</li>
+                                    <li><i class="fas fa-circle text-blue-300 mr-2 text-xs"></i> Optimized sampling strategies</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-6 rounded-lg shadow-md border border-orange-100">
+                                <h3 class="text-lg font-medium text-gray-900 mb-3 flex items-center">
+                                    <i class="fas fa-exclamation-triangle text-orange-500 mr-2"></i> Key Challenges
+                                </h3>
+                                <ul class="space-y-2 text-gray-600">
+                                    <li><i class="fas fa-circle text-orange-300 mr-2 text-xs"></i> Reward model design</li>
+                                    <li><i class="fas fa-circle text-orange-300 mr-2 text-xs"></i> High computational cost</li>
+                                    <li><i class="fas fa-circle text-orange-300 mr-2 text-xs"></i> Training stability</li>
+                                    <li><i class="fas fa-circle text-orange-300 mr-2 text-xs"></i> Integration complexity</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 p-6 rounded-lg my-6">
+                            <h4 class="font-medium text-gray-800 mb-3">Current Research Directions</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="tag">RLHF for aesthetics</span>
+                                <span class="tag">Instruction tuning</span>
+                                <span class="tag">Sampling optimization</span>
+                                <span class="tag">Automated prompt engineering</span>
+                                <span class="tag">Diversity preservation</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="mt-16 border-t border-gray-200 pt-8">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <div class="flex items-center mb-4 md:mb-0">
+                            <i class="fas fa-cube text-purple-600 text-2xl mr-2"></i>
+                            <span class="text-lg font-bold text-gray-900">SDXL Training Docs</span>
+                        </div>
+                        <div class="flex space-x-6">
+                            <a href="https://github.com/kohya-ss/sd-scripts" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-discord text-xl"></i>
+                            </a>
+                            <a href="#" class="text-gray-500 hover:text-gray-700">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center md:text-left">
+                        <p class="text-sm text-gray-500">
+                            &copy; 2023 SDXL Training Documentation. Based on <code>sd-scripts</code> project. Not affiliated with Stability AI.
+                        </p>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
